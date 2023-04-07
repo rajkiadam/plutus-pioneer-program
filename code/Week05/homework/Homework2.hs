@@ -13,7 +13,7 @@ import           Plutus.V2.Ledger.Api (BuiltinData, MintingPolicy,
                                        TxInInfo (txInInfoOutRef),
                                        TxInfo (txInfoInputs, txInfoMint))
 import qualified PlutusTx
-import           PlutusTx.Builtins     (emptyByteString, fromBuiltin)
+import           PlutusTx.Builtins     (emptyByteString)
 import           PlutusTx.Prelude     (Bool (False), ($), (.), Eq ((==)), (&&), any)
 import           Utilities            (wrapPolicy)
 

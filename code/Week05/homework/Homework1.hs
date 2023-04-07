@@ -13,7 +13,7 @@ import           Plutus.V2.Ledger.Api (BuiltinData, MintingPolicy, POSIXTime,
                                        ScriptContext (scriptContextTxInfo))
 import           Plutus.V2.Ledger.Contexts (txSignedBy)
 import qualified PlutusTx
-import           PlutusTx.Prelude     (Bool (False), ($), (&&), traceIfFalse)
+import           PlutusTx.Prelude     (Bool, ($), (&&), traceIfFalse)
 import           Utilities            (wrapPolicy)
 
 {-# INLINABLE mkDeadlinePolicy #-}
@@ -38,3 +38,4 @@ deadlinePolicy pkh deadline = mkMintingPolicyScript $
     $$(PlutusTx.compile [|| mkWrappedDeadlinePolicy ||])
         `PlutusTx.applyCode` PlutusTx.liftCode pkh
         `PlutusTx.applyCode` PlutusTx.liftCode deadline
+
